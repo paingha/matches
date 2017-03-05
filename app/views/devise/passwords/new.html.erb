@@ -1,0 +1,70 @@
+ 
+<div class="pageload">
+<div class="pageload-inner">
+<div class="sk-rotating-plane"></div>
+</div>
+</div>
+ 
+<div class="app forgot-password usersession">
+<div class="session-wrapper">
+<div class="page-height row-equal align-middle">
+<div class="column">
+<div class="card bg-white no-border">
+<div class="card-block">
+<div role="form" class="form-layout" action="http://reactor.nyasha.me/static/extras-signin.html">
+<div class="text-center m-b">
+<h4 class="text-uppercase">Reset Password</h4>
+</div>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-inputs">
+<label class="text-uppercase">Your email address</label>
+    <%= f.email_field :email,class:"form-control input-lg" ,placeholder:"Email address", autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Reset My Password",class:"btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>
+</div>
+</div>
+<div class="row"><div class="col-md-1 col-sm-6 col-xs-4"><a href="/user/sign_in" class="bottom-link">Login</a></div>
+<div class="col-md-1 col-sm-6 col-xs-2"><a href="/user/sign_up" class="bottom-link">Register</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="session-footer">
+<nav class="footer-right">
+<ul class="nav">
+<li>
+<a href="javascript:;">Feedback</a>
+</li>
+<li>
+<a href="javascript:;" class="scroll-up">
+<i class="fa fa-angle-up"></i>
+</a>
+</li>
+</ul>
+</nav>
+<nav class="footer-left hidden-xs">
+<ul class="nav">
+<li>
+<a href="javascript:;"><span>About</span> PayBox</a>
+</li>
+<li>
+<a href="javascript:;">Privacy</a>
+</li>
+<li>
+<a href="javascript:;">Terms</a>
+</li>
+<li>
+<a href="javascript:;">Help</a>
+</li>
+</ul>
+</nav>
+</footer>
+ 
+</div>

@@ -1,0 +1,92 @@
+
+<div class="pageload">
+<div class="pageload-inner">
+<div class="sk-rotating-plane"></div>
+</div>
+</div>
+ 
+<div class="app signin usersession">
+<div class="session-wrapper">
+<div class="page-height-o row-equal align-middle">
+<div class="column">
+<div class="card bg-white no-border">
+<div class="card-block">
+<div class="form-layout">
+<div class="text-center m-b">
+<h4 class="text-uppercase">Welcome back</h4>
+<p>Please sign in to your account</p>
+</div>
+<div class="form-inputs">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <label class="text-uppercase">Your email address</label>
+    <%= f.email_field :email,class:"form-control input-lg",placeholder:"Email Address", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <label class="text-uppercase">Password</label>
+    <%= f.password_field :password,class:"form-control input-lg",placeholder:"Password", autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+     <label class="text-uppercase">Remember Me</label>
+      <%= f.check_box :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: "btn btn-primary btn-block btn-lg m-b" %>
+  </div>
+<% end %>
+</div>
+
+<div class="divider">
+<span>OR</span>
+</div>
+<a class="btn btn-block btn-lg m-b" href="/users/sign_up">Signup</a>
+<p class="text-center">
+<small>
+<em>By clicking Log in you agree to our <a href="#">terms and conditions</a></em>
+</small>
+</p>
+</div>
+</div>
+<a ui-sref="/user/password/new" class="bottom-link">Forgotten password?</a>
+</div>
+</div>
+</div>
+</div>
+ 
+<footer class="session-footer">
+<nav class="footer-right">
+<ul class="nav">
+<li>
+<a href="javascript:;">Feedback</a>
+</li>
+<li>
+<a href="javascript:;" class="scroll-up">
+<i class="fa fa-angle-up"></i>
+</a>
+</li>
+</ul>
+</nav>
+<nav class="footer-left hidden-xs">
+<ul class="nav">
+<li>
+<a href="javascript:;"><span>About</span> PayBox</a>
+</li>
+<li>
+<a href="javascript:;">Privacy</a>
+</li>
+<li>
+<a href="javascript:;">Terms</a>
+</li>
+<li>
+<a href="javascript:;">Help</a>
+</li>
+</ul>
+</nav>
+</footer>
+ 
+</div>
