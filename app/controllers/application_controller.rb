@@ -10,19 +10,28 @@ end
   session[:verified].nil? && !current_user.phone.blank?
 end
   
+
+  
+  
   def start_verification
-  result = Nexmo::Client.new.send_verification_request(
-    number: current_user.phone,
-    brand: "PayBox",
-    sender_id: 'PayBox'
-  )
-  if result['status'] == '0'
-    redirect_to edit_verification_path(id: result['request_id'])
-  else
-    sign_out current_user
-    redirect_to :new_user_session, flash: {
-      error: 'Could not verify your number. Please contact support.'
-    }
+    response = client.start_verification(
+      number: current_user.phone,
+      brand: 'MyApp'
+    )
+
+    if response['status'] == '0'
+      session[:verification_id] =
+        response['request_id']
+    end
   end
+
+  def client
+    @client ||= Nexmo::Client.new(
+      key: ENV['NEXMO_API_KEY'],
+      secret: ENV['NEXMO_API_SECRET']
+    )
+  end
+    
+  
 end
 end
