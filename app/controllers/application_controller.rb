@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def verified?
-    session[:verified] != nil
+    session[:verified]
   end
 end
