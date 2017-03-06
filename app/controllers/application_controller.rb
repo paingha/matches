@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   
   private
   def ensure_verified
-    unless verified?
+    if session[:verified] == nil
       redirect_to new_verification_path
+      else
+      
     end
   end
 
-  def verified?
-    session[:verified]
-  end
+  
 end
