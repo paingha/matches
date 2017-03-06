@@ -12,7 +12,9 @@
     )
 
     if response['status'] == '0'
-      current_user.verified = 'true'
+      u = current_user
+      u.verified = true
+      u.save!
       redirect_to :root
     else
       flash[:alert] = 'Code invalid'
