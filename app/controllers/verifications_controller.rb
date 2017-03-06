@@ -1,6 +1,6 @@
  
   class VerificationsController < ApplicationController
-  before_action :verify_user
+ before_action :send_verification_request
 
   def new
   end
@@ -14,7 +14,6 @@
     if response['status'] == '0'
       session[:verified] = true
       redirect_to :root
-      
     else
       flash[:alert] = 'Code invalid'
       redirect_to [:new, :verification]
@@ -22,16 +21,6 @@
   end
 
   private
-    
-    def verify_user
-      if session[:verification_id].nil? && !current_user.phone.blank?
-        send_verification_request
-        else
-        redirect_to root_path
-      end
-    end
-    
-    
 
   def send_verification_request
     response = client.start_verification(
