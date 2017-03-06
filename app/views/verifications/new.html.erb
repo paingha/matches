@@ -1,12 +1,79 @@
-<h1>Verify</h1>
-
+<div class="pageload">
+<div class="pageload-inner">
+<div class="sk-rotating-plane"></div>
+</div>
+</div>
+ 
+<div class="app lockscreen usersession">
+<div class="session-wrapper">
+<div class="page-height-o row-equal align-middle">
+<div class="column">
+<div class="card no-border bg-white text-center">
+<div class="card-block">
+<div class="text-center">
+<div class="lockscreen-avatar">
+<img src="images/man.png" alt="" class="avatar avatar-lg img-circle">
+</div>
+<span class="center-block m-t">Welcome back, <%= current_user.first_name %>&nbsp;<%= current_user.last_name %></%></%></span>
+<small>Please enter your Validation code</small>
+</div>
+<div class="center-block lockcode">
+<div role="form">
 <%= form_tag '/verification' do |f| %>
+ <div class="input-group m-y">
   <div class="field">
     <%= label_tag :code %>
-    <%= text_field_tag :code %>
+    <%= text_field_tag :code,"" ,class:"form-control lock-input", id:"password", placeholder:"enter lock code" %>
   </div>
   <div class="actions">
-    <%= submit_tag 'Continue Login' %>
+   <span class="input-group-btn">
+    <%= submit_tag 'Verify',class:"btn btn-danger" %>
+    <i class="icon-lock"></i>
+    </span>
     <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </p>
   </div>
 <% end %>
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+<footer class="session-footer">
+<nav class="footer-right">
+<ul class="nav">
+<li>
+<a href="javascript:;">Feedback</a>
+</li>
+<li>
+<a href="javascript:;" class="scroll-up">
+<i class="fa fa-angle-up"></i>
+</a>
+</li>
+</ul>
+</nav>
+<nav class="footer-left hidden-xs">
+<ul class="nav">
+<li>
+<a href="javascript:;"><span>About</span> PayBox</a>
+</li>
+<li>
+<a href="javascript:;">Privacy</a>
+</li>
+<li>
+<a href="javascript:;">Terms</a>
+</li>
+<li>
+<a href="javascript:;">Help</a>
+</li>
+</ul>
+</nav>
+</footer>
+ 
+</div>
