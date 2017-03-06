@@ -1,20 +1,43 @@
-class VerificationsController < ApplicationController
-  skip_before_action :verify_user!
  
-  def edit
+  class VerificationsController < ApplicationController
+  before_action :send_verification_request
+
+  def new
   end
- 
-  def update
-  confirmation = Nexmo::Client.new.check_verification_request(
-    request_id: params[:id],
-    code: params[:code]
-  )
- 
-  if confirmation['status'] == '0'
-    session[:verified] = true
-    redirect_to :root, flash: { success: 'Welcome back.' }
-  else
-    redirect_to edit_verification_path(id: params[:id]), flash: { error: confirmation['error_text'] }
+
+  def create
+    response = client.check_verification(
+      session[:verification_id],
+      code: params[:code]
+    )
+
+    if response['status'] == '0'
+      session[:verified] = true
+      redirect_to :root
+    else
+      flash[:alert] = 'Code invalid'
+      redirect_to [:new, :verification]
+    end
   end
-end
+
+  private
+
+  def send_verification_request
+    response = client.start_verification(
+      number: current_user.phone,
+      brand: 'PayBox'
+    )
+
+    if response['status'] == '0'
+      session[:verification_id] =
+        response['request_id']
+    end
+  end
+
+  def client
+    @client ||= Nexmo::Client.new(
+      key: ENV['NEXMO_API_KEY'],
+      secret: ENV['NEXMO_API_SECRET']
+    )
+  end
 end
