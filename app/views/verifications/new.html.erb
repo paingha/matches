@@ -23,21 +23,22 @@
  <div class="input-group m-y">
   <div class="field">
     <%= label_tag :code %>
-    <%= text_field_tag :code,"" ,class:"form-control lock-input", id:"password", placeholder:"enter lock code" %>
+    <%= text_field_tag :code,class:"form-control lock-input", id:"password", placeholder:"enter lock code" %>
   </div>
-  <div class="actions">
+  
    <span class="input-group-btn">
     <%= submit_tag 'Verify',class:"btn btn-danger" %>
     <i class="icon-lock"></i>
     </span>
-    <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </p>
-  </div>
+    
+
 <% end %>
 </div>
 
 
 
 </div>
+<p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </p>
 </div>
 </div>
 </div>
