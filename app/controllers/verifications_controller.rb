@@ -23,7 +23,7 @@
   private
     
     def verify_user
-      if session[:verification_id].nil? && !current_user.phone_number.blank?
+      if session[:verification_id].nil? && !current_user.phone.blank?
         send_verification_request
         else
         redirect_to root_path
