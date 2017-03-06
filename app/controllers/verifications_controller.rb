@@ -12,7 +12,8 @@
     )
 
     if response['status'] == '0'
-      redirect_to root_path(id: response['verification_id'])
+      session[:verified] = true
+      redirect_to :root
       
     else
       flash[:alert] = 'Code invalid'
