@@ -1,7 +1,7 @@
 <h1>Tickets#index</h1>
 <p>Find me in app/views/tickets/index.html.erb</p>
 <% @tickets.each do |ticket| %>
-    div><strong><%= ticket.title %></strong> &nbsp;&nbsp;
+    <strong><%= ticket.title %></strong> &nbsp;&nbsp;
       <%= sanitize(ticket.message.truncate(180, separator: '</p>')) %>&nbsp;&nbsp;
    <strong><%= time_ago_in_words(ticket.created_at) %>&nbsp;ago</strong><br>
                             <% end %>
