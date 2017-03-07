@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'tickets/index'
+
   get 'blogs/index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
