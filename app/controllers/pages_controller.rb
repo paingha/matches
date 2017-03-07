@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
   
   def tickets
-    @tickets = Ticket.all.where(user_id = current_user.id)
+    @tickets = Ticket.all.where('user_id = current_user.id')
   end
 end
