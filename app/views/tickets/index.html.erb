@@ -779,7 +779,7 @@ T
 <div class="card-block">
 <h4 class="card-title"><strong><%= ticket.title %></strong></h4>
 <div class="p-a">
-<h4 class="card-title p-a-lg m-b-0"><%= sanitize(ticket.message.truncate(180, separator: '</p>')) %></h4>
+<p><%= sanitize(ticket.message.truncate(180, separator: '</p>')) %></p>
 </div>
 <div class="">
 <a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong><%= time_ago_in_words(ticket.created_at) %>&nbsp;ago</strong></a>
