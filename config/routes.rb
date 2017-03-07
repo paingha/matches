@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
 
   get 'tickets/index'
+  
+  get '/ticket', to: 'pages#ticket'
 
   get 'blogs/index'
 
