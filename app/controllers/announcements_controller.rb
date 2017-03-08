@@ -4,7 +4,7 @@ class AnnouncementsController < ApplicationController
   before_action :ensure_verified
   
   def index
-    @announcement = Announcements.all.order('created_at DESC')
+    @announcement = Announcement.all.order('created_at DESC')
   end
   
   def create
