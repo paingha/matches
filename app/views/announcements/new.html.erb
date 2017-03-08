@@ -232,12 +232,13 @@
 <div class="card no-border bg-white">
 <div class="card-block row-equal align-middle">
 <div class="column p-r">
-<div class="h6 text-uppercase">Donec sed odio dui.</div>
+<div class="h6 text-uppercase">Create New Announcement</div>
 <%= form_for :announcement, url: announcements_path, html: { multipart: true } do |f| %>
   
   
   <div class="form-group">
-<label class="col-sm-2 control-label">Announcement</label>
+<label class="col-sm-6 control-label">Announcement</label>
+<br>
 <div class="col-sm-10">
 <%= f.text_area :text, rows:'3', class:"form-control" %>
 
