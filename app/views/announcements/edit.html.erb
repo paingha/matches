@@ -234,7 +234,7 @@
 <div class="card-block row-equal align-middle">
 <div class="column p-r">
 <div class="h6 text-uppercase">Create New Announcement</div>
-<%= form_for :announcement, url: announcements_path, html: { multipart: true } do |f| %>
+<%= form_for :announcement, url: edit_announcement_path, html: { multipart: true } do |f| %>
   
   
   <div class="form-group">
@@ -256,7 +256,7 @@
   
   <br>
   <p>
-    <%= f.submit "Publish" %>
+    <%= f.submit "Update" %>
   </p> 
   <% end %>
 
