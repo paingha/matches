@@ -237,10 +237,10 @@
 <p><%= sanitize(announcement.text.truncate(400, separator: '</p>')) %></p>
 </div>
 <div class="">
-<button type="button" class="btn btn-danger btn-sm btn-icon pull-left card-link">
+<%= link_to "Delete", announcement_path(@announcement), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm btn-icon pull-left card-link" %>
+
 <i class="icon-trash"></i>
-<span>Delete</span>
-</button>&nbsp;
+&nbsp;
 <button type="button" class="btn btn-info btn-sm btn-icon pull-left">
 <i class="icon-pencil"></i>
 <span>Edit</span>
