@@ -235,13 +235,13 @@
 <div class="card-block row-equal align-middle">
 <div class="column p-r">
 <div class="h6 text-uppercase">My Profile</div>
-<p>Name: <%= current_user.first_name %>&nbsp;<%= current_user.last_name %></p>
-<p>Verified Status: <% if current_user.verified == true %>Verified <% else %> Not Verified <% end %></p>
-<p>Phone Number: <%= current_user.phone %></p>
-<p>Account Name: <%= current_user.account_name %></p>
-<p>Account Number: <%= current_user.account_number %></p>
-<p>Account Description: <%= current_user.account_description %></p>
-<p>Address: <%= current_user.address %></p>
+<p><strong>Name:</strong> <%= current_user.first_name %>&nbsp;<%= current_user.last_name %></p>
+<p><strong>Verified Status:</strong> <% if current_user.verified == true %>Verified <% else %> Not Verified <% end %></p>
+<p><strong>Phone Number:</strong> <%= current_user.phone %></p>
+<p><strong>Account Name:</strong> <%= current_user.account_name %></p>
+<p><strong>Account Number:</strong> <%= current_user.account_number %></p>
+<p><strong>Account Description:</strong> <%= current_user.account_description %></p>
+<p><strong>Address:</strong> <%= current_user.address %></p>
 <div class="widget-card-title">
 <div class="pull-right">
 </div>
