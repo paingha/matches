@@ -37,7 +37,7 @@ class AnnouncementsController < ApplicationController
   
   def destroy
     @announcement.destroy
-		redirect_to root_path
+	redirect_to root_path
   end
   
   def announcements_params
