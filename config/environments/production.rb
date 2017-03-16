@@ -39,6 +39,17 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_region: ENV["AWS_REGION"],
+    s3_credentials: {
+      s3_host_name: ENV["AWS_HOST_NAME"],
+      bucket: ENV["AWS_S3_BUCKET"],
+      access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+      secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+      }
+    } 
+
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
