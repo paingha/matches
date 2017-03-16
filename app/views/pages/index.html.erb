@@ -263,8 +263,18 @@
 <div class="card no-border bg-white">
 <div class="card-block row-equal align-middle">
 <div class="column p-r">
-<div class="h6 text-uppercase">My Profile</div>
-<p><%= current_user.first_name %></p>
+<div class="h4 text-uppercase"><strong>My Profile</strong></div>
+<p><%= image_tag(current_user.avatar.url(:medium), :class => "img-responsive") %></p>
+<p><strong>Name:</strong> <%= current_user.first_name %>&nbsp;<%= current_user.last_name %></p>
+<p><strong>Verified Status:</strong> <% if current_user.verified == true %>Verified <% else %> Not Verified <% end %></p>
+<p><strong>Phone Number:</strong> <%= current_user.phone %></p>
+<p><strong>Account Name:</strong> <%= current_user.account_name %></p>
+<p><strong>Account Number:</strong> <%= current_user.account_number %></p>
+<p><strong>Account Description:</strong> <%= current_user.account_description %></p>
+<p><strong>Address:</strong> <%= current_user.address %></p>
+<br>
+<a href="/users/edit" class="btn btn-primary">Edit Profile</a>
+
 <div class="widget-card-title">
 <div class="pull-right">
 </div>
