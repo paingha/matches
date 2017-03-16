@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'packages/index'
+
   get 'tickets/index'
   
   

@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307193205) do
+ActiveRecord::Schema.define(version: 20170316025103) do
 
   create_table "announcements", force: :cascade do |t|
     t.text     "text"
     t.boolean  "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "amount"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_packages_on_user_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -59,6 +69,11 @@ ActiveRecord::Schema.define(version: 20170307193205) do
     t.string   "account_name"
     t.string   "account_description"
     t.string   "address"
+    t.string   "package"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

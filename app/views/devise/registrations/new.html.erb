@@ -44,9 +44,15 @@
     <%= f.password_field :password_confirmation, class:'form-control input-lg', placeholder:"Confirm Password", autocomplete: "off" %>
   </div>
   <div class="field">
-    <label class="text-uppercase">Phone NUmber</label>
+    <label class="text-uppercase">Phone Number</label>
     <%= f.text_field :phone, class:'form-control input-lg',placeholder:"Phone Number", autofocus: true %>
   </div>
+<div class="field">
+    <label class="text-uppercase">Profile Pic</label>
+    <%= f.file_field :avatar, class:'form-control input-lg', autofocus: true %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Sign up", class:'btn btn-primary btn-block btn-lg m-b' %>
   </div>
