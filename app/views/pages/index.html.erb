@@ -236,6 +236,7 @@
 <div class="card-block row-equal align-middle">
 <div class="column p-r">
 <div class="h4 text-uppercase"><strong>My Profile</strong></div>
+<p><%= image_tag(current_user.avatar.url(:medium), :class => "img-responsive") %></p>
 <p><strong>Name:</strong> <%= current_user.first_name %>&nbsp;<%= current_user.last_name %></p>
 <p><strong>Verified Status:</strong> <% if current_user.verified == true %>Verified <% else %> Not Verified <% end %></p>
 <p><strong>Phone Number:</strong> <%= current_user.phone %></p>
