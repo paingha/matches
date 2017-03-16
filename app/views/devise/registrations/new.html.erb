@@ -47,11 +47,26 @@
     <label class="text-uppercase">Phone Number</label>
     <%= f.text_field :phone, class:'form-control input-lg',placeholder:"Phone Number", autofocus: true %>
   </div>
+  <div class="field">
+    <label class="text-uppercase">Address</label>
+    <%= f.text_field :address, class:'form-control input-lg',placeholder:"Address", autofocus: true %>
+  </div>
 <div class="field">
     <label class="text-uppercase">Profile Pic</label>
     <%= f.file_field :avatar, class:'form-control input-lg', autofocus: true %>
   </div>
-
+<div class="field">
+    <label class="text-uppercase">Bank Account Name</label>
+    <%= f.text_field :account_name, class:'form-control input-lg',placeholder:"Bank Account Name", autofocus: true %>
+  </div>
+<div class="field">
+    <label class="text-uppercase">Bank Account Number</label>
+    <%= f.text_field :account_number, class:'form-control input-lg',placeholder:"Bank Account Number", autofocus: true %>
+  </div>
+<div class="field">
+    <label class="text-uppercase">Account Description</label>
+    <%= f.text_field :account_description, class:'form-control input-lg',placeholder:"Account Description", autofocus: true %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up", class:'btn btn-primary btn-block btn-lg m-b' %>
