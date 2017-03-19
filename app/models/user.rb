@@ -9,4 +9,5 @@ has_attached_file :avatar, styles: { large: "500x500>", medium: "300x300>", thum
 
   has_many :tickets
   has_one :package
+  has_many :matches
 end

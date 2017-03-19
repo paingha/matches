@@ -1,0 +1,15 @@
+<%= form_for :match, url: match_index_path, html: { multipart: true } do |f| %>
+  
+  <p>
+    <%= f.label :receiver_id %><br>
+  <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Choose a User" }, input_html: { class: "dropdown-toggle" } %>
+  </p>
+  <p>
+    <%= f.label :giver_id %><br>
+  <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Choose a User" }, input_html: { class: "dropdown-toggle" } %>
+  </p>
+  
+  <p>
+    <%= f.submit "Publish", class: 'btn btn-primary'%>
+  </p> 
+  <% end %>

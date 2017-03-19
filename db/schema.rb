@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316025103) do
+ActiveRecord::Schema.define(version: 20170319044428) do
 
   create_table "announcements", force: :cascade do |t|
     t.text     "text"
     t.boolean  "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "receiver_id"
+    t.integer  "giver_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "packages", force: :cascade do |t|
