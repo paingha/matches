@@ -12,7 +12,8 @@
 <div class="card-block">
 <div class="text-center">
 <div class="lockscreen-avatar">
-<img src="images/man.png" alt="" class="avatar avatar-lg img-circle">
+<%= image_tag(current_user.avatar.url(:medium), :class => "avatar avatar-lg img-circle") %>
+
 </div>
 <span class="center-block m-t">Welcome back, <%= current_user.first_name %>&nbsp;<%= current_user.last_name %></span>
 <small>Please enter your Validation code</small>
