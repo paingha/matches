@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319064248) do
+ActiveRecord::Schema.define(version: 20170325055057) do
 
   create_table "announcements", force: :cascade do |t|
     t.text     "text"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170319064248) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "ticket_by"
     t.index ["user_id", "created_at"], name: "index_tickets_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
