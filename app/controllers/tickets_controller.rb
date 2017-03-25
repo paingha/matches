@@ -4,4 +4,7 @@ class TicketsController < ApplicationController
   def index
     @tickets = current_user.tickets.all.order('created_at DESC')
   end
+  
+  def new
+  end
 end

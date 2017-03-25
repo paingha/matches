@@ -5,9 +5,6 @@ Rails.application.routes.draw do
 
   get 'packages/index'
 
-  get 'tickets/index'
-  
-  
 
   get 'blogs/index'
 
@@ -15,6 +12,7 @@ Rails.application.routes.draw do
  
   root to: "pages#index"
   resources :pages
+  resources :tickets
   resources :announcements
   resources :matches
   resource :verification, only: [:new, :create]
