@@ -2,7 +2,7 @@
 
 <% if current_user.admin == true %>
 <% if @announcement.published == true %>
-Announcement Published &nbsp; <strong><%= time_ago_in_words(ticket.created_at) %>&nbsp;ago</strong>
+Announcement Published &nbsp; <strong><%= time_ago_in_words(announcement.created_at) %>&nbsp;ago</strong>
 <% else %>
 Announcement not published
 <% end %>
