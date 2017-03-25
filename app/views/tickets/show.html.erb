@@ -230,9 +230,8 @@
 <div class="row same-height-cards">
 
 
-<%# tickets new form %>
-<%= @tickets.title %>
-<%= @tickets.message %>
+<%= ticket.title %>
+<%= ticket.message %>
  <strong><%= time_ago_in_words(ticket.created_at) %>&nbsp;ago</strong>
 
 
