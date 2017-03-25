@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
   before_action :ensure_verified
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
   def index
-    @ticket = current_user.Ticket.all.order('created_at DESC')
+    @tickets = current_user.tickets.all.order('created_at DESC')
   end
   
   def create
@@ -18,6 +18,12 @@ class TicketsController < ApplicationController
   
   def new
     @ticket = Ticket.new
+  end
+  
+  def show
+  end
+  
+  def edit
   end
   
   
