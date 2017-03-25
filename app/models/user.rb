@@ -9,5 +9,29 @@ has_attached_file :avatar, styles: { large: "500x500>", medium: "300x300>", thum
 
   has_many :tickets
   has_one :package
-  has_many :matches
+  has_many :active_matches, class_name:  "Match",
+                                  foreign_key: "giver_id",
+                                  dependent:   :destroy
+   has_many :passive_matches, class_name:  "Match",
+                                   foreign_key: "receiver_id",
+                                   dependent:   :destroy
+
+    has_many :receivers, through: :active_matches
+    has_many :givers, through: :passive_matches
+
+
+    def match(other_user)
+    active_matches.create(giver_id: other_user.id)
+  end
+
+  # Unfollows a user.
+  def unmatch(other_user)
+    active_matches.find_by(giver_id: other_user.id).destroy
+  end
+
+  # Returns true if the current user is following the other user.
+  def matched?(other_user)
+    matched.include?(other_user)
+  end
+
 end

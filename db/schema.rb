@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319044428) do
+ActiveRecord::Schema.define(version: 20170319064248) do
 
   create_table "announcements", force: :cascade do |t|
     t.text     "text"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20170319044428) do
     t.integer  "giver_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["giver_id"], name: "index_matches_on_giver_id"
+    t.index ["receiver_id", "giver_id"], name: "index_matches_on_receiver_id_and_giver_id", unique: true
+    t.index ["receiver_id"], name: "index_matches_on_receiver_id"
   end
 
   create_table "packages", force: :cascade do |t|
