@@ -26,7 +26,20 @@ class TicketsController < ApplicationController
   def edit
   end
   
+  def update
+		if @ticket.update(tickets_params)
+			redirect_to @ticket
+		else
+			render "Edit"
+		end
+	end
+
+	def destroy
+		@ticket.destroy
+		redirect_to root_path
+	end
   
+  private
   def tickets_params
 		params.require(:ticket).permit(:title, :message, :ticket_by)
 	end
