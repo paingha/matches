@@ -183,13 +183,14 @@
 </li>
 <li>
 <a href="javascript:;" class="ripple" data-toggle="dropdown">
-<img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
+<%= image_tag(current_user.avatar.url(:medium), :class => "header-avatar img-circle") %>
+
 <span><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></span>
 <span class="caret"></span>
 </a>
 <ul class="dropdown-menu">
 <li>
-<a href="javascript:;">Settings</a>
+<a href="/users/edit">Settings</a>
 </li>
 <li>
 <a href="javascript:;">Upgrade</a>
@@ -230,7 +231,56 @@
 <div class="row same-height-cards">
 
 
-<%# tickets new form %>
+
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<div class="card no-border bg-white">
+<div class="card-block row-equal align-middle">
+<div class="column p-r">
+<div class="h6 text-uppercase">Create New Ticket</div>
+<%= form_for :ticket, url: tickets_path, html: { multipart: true } do |f| %>
+  
+  
+  <div class="form-group">
+<label class="col-sm-6 control-label">Ticket Title</label>
+<br>
+<div class="col-sm-10">
+<%= f.text :title, class:"form-control" %>
+
+</div>
+</div>
+<br>
+<div class="form-group">
+<label class="col-sm-6 control-label">Ticket Message</label>
+<br>
+<div class="col-sm-10">
+<%= f.text_area :text, rows:'6', class:"form-control" %>
+
+</div>
+</div>
+<br>
+ <div class="form-group">
+
+<div class="col-sm-10">
+<label class="col-sm-2 control-label">Ticket By</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= current_user.first_name %>&nbsp;<%= current_user.last_name %>
+</div>
+</div>
+  
+  <br>
+  <p>
+    <%= f.submit "Publish" %>
+  </p> 
+  <% end %>
+
+</div>
+<div class="column p-l">
+<div class="dashboard-barO" style="height:200px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3"></div>
 
 </div>
 </div>
