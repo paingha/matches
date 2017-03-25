@@ -235,7 +235,7 @@
 <div class="col-md-4">
 <div class="card no-border bg-white">
 <div class="card-block">
-<h4 class="card-title"><strong><%= link_to ticket.title, tickets_path(ticket) %></strong></h4>
+<h4 class="card-title"><strong><%= link_to ticket.title, ticket_path(ticket) %></strong></h4>
 <div class="p-a">
 <p><%= sanitize(ticket.message.truncate(180, separator: '</p>')) %></p>
 </div>
