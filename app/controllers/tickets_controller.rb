@@ -9,13 +9,9 @@ class TicketsController < ApplicationController
   
   def create
     @ticket = Ticket.new(tickets_params)
-    
-    
-		if @ticket.save
-			redirect_to @ticket, notice: 'Ticket created'
-		else
-			render "New"
-		end
+    @ticket.save
+    redirect_to @ticket, notice: 'Ticket created'
+		
   end
   
   def new
