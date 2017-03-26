@@ -236,6 +236,9 @@
 <h4><%= @ticket.title %></h4>
 <p><%= @ticket.message %></p>
 </div>
+<div class="pull-left">
+  Priority: <%= @ticket.priority %>
+</div>
 <div class="">
 
 <a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong><%= time_ago_in_words(@ticket.created_at) %>&nbsp;ago</strong></a>
