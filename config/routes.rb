@@ -12,7 +12,9 @@ Rails.application.routes.draw do
  
   root to: "pages#index"
   resources :pages
-  resources :tickets
+  resources :tickets do
+    resources :comments, module: :tickets
+  end
   resources :announcements
   resources :matches
   resource :verification, only: [:new, :create]
