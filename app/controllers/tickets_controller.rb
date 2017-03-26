@@ -9,6 +9,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(tickets_params)
     @ticket.ticket_by = current_user.first_name + " " + current_user.last_name
+    @ticket.save
 		if @ticket.save
 			redirect_to @ticket, notice: 'Ticket created'
 		else
