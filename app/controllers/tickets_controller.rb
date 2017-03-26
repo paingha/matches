@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
     
     
 		if @ticket.save
-			redirect_to @ticket
+			respond_with @ticket
 		else
 			render "New"
 		end
