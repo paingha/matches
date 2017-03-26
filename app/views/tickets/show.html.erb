@@ -228,9 +228,33 @@
 
   </div>
 <div class="row same-height-cards">
-<%= @ticket.title %>
 
-<%= @ticket.message %>
+<div class="col-md-6">
+<div class="card no-border bg-white">
+<div class="card-block">
+<div class="p-a">
+<h4><%= @ticket.title %></h4>
+<p><%= @ticket.message %></p>
+</div>
+<div class="">
+<%= link_to  ticket_path(ticket), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm btn-icon pull-left card-link" do %>
+
+<i class="icon-trash"></i>
+<span>Delete</span>
+<% end %>&nbsp;
+<%= link_to edit_ticket_path(ticket), class: "btn btn-info btn-sm btn-icon pull-left" do %>
+
+<i class="icon-pencil"></i>
+<span>Edit</span>
+<% end %>
+
+<a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong><%= time_ago_in_words(ticket.created_at) %>&nbsp;ago</strong></a>
+
+</div>
+</div>
+</div>
+</div>
+
 
 
 
