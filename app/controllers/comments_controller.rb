@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   
   def create
     @comment = @commentable.comments.new comment_params
-    @comment.user = current_user.first_name + current_user.last_name
+    @comment.user = current_user.first_name + "" + current_user.last_name
     @comment.save
     redirect_to @commentable, notice: "your comment was successful posted"
     
