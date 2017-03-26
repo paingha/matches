@@ -251,7 +251,29 @@
 
 </div>
 <% @ticket.comments.each do |comment| %>
-<%= comment.body %>
+
+<div class="row same-height-cards">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<div class="card no-border bg-white">
+<div class="card-block">
+<div class="p-a">
+<h4>Ticket Comment</h4>
+<p><%= comment.body %>></p>
+</div>
+<div class="">
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-2"></div>
+
+
+
+</div>
+
 
 <% end %>
 </div>
