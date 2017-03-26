@@ -250,31 +250,10 @@
 
 
 </div>
-<h4>Ticket Comments</h4>
-<% @ticket.comments.each do |comment|
-<div class="row same-height-cards">
-<div class="col-md-2"></div>
-<div class="col-md-8">
-<div class="card no-border bg-white">
-<div class="card-block">
-<div class="p-a">
+<% @ticket.comments.each do |comment| %>
+<%= comment.body %>
 
-<p><%= comment.body %></p>
-</div>
-<div class="">
-
-<a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong><%= time_ago_in_words(@ticket.created_at) %>&nbsp;ago</strong></a>
-
-
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-2"></div>
-
-
-
-</div><% end %>
+<% end %>
 </div>
  
 </div>
