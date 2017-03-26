@@ -2,6 +2,7 @@ class TicketsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_verified
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
+  
   def index
     @tickets = current_user.tickets.all.order('created_at DESC')
   end
@@ -40,7 +41,7 @@ class TicketsController < ApplicationController
 		redirect_to root_path
 	end
   
-  private
+ 
   def tickets_params
 		params.require(:ticket).permit(:title, :message, :priority)
 	end
