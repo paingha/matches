@@ -7,12 +7,14 @@ class TicketsController < ApplicationController
   end
   
   def create
-    @ticket = Ticket.new tickets_params
+    @ticket = Ticket.new(tickets_params)
     @ticket.ticket_by = current_user.first_name + " " + current_user.last_name
-    @ticket.save
-		
+    
+		if @ticket.save
 			redirect_to @ticket, notice: 'Ticket created'
-		
+		else
+			render "New"
+		end
   end
   
   def new
@@ -40,7 +42,7 @@ class TicketsController < ApplicationController
   
   private
   def tickets_params
-		params.require(:ticket).permit(:title, :message, :priority)
+		params.require(:ticket).permit(:title, :message, :priority, :ticket_by)
 	end
 
 
