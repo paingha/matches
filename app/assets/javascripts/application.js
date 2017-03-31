@@ -12,17 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require app.min
+//= require bootstrap-sprockets
 //= require turbolinks
-//= require alert
-//= require bootstrap-datatables
-//= require calender
-//= require classie
-//= require colors
-//= require dashboard
-//= require inputfx
-//= require jquery.bootstrap-touchspin.min
-//= require jquery.card
-//= reuire jquery.flot
-
+//= require_tree .
