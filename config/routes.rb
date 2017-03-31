@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
  
 
+  get 'testimonies/index'
+
+  get 'testimonies/show'
+
+  get 'testimonies/new'
+
+  get 'testimonies/edit'
+
   get 'packages/index'
 
 
