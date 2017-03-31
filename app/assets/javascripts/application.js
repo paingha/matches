@@ -25,4 +25,4 @@
 //= require jquery.bootstrap-touchspin.min
 //= require jquery.card
 //= reuire jquery.flot
-//= require_tree .
+
