@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
  
 
+  get 'blog/index'
+
+  get 'blog/new'
+
+  get 'blog/show'
+
+  get 'blog/edit'
+
   get 'testimonies/index'
 
   get 'testimonies/show'
