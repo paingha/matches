@@ -237,7 +237,7 @@
 <p><%= @ticket.message %></p>
 </div>
 <div class="pull-left">
-  Priority: <%= @ticket.priority %>
+  <% if ticket.priority == "Low" %><strong><font color = "green">Priority : Low</font></strong> <% elsif ticket.priority == "Medium" %><strong><font color = "orange">Priority : Medium</font></strong> <% elsif ticket.priority == "High" %><strong><font color = "red">Priority : High</font></strong><% end %>
 </div>
 <div class="">
 
