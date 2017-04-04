@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user.first_name + " " + current_user.last_name
     @comment.save
-      Notification.create(recipient: user, actor: current_user, action: "commented", notifiable: @comment)
+      Notification.create(recipient: @comment_user, actor: current_user, action: "commented", notifiable: @comment)
    
     redirect_to @commentable, notice: "your comment was successful posted"
     
