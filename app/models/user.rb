@@ -19,6 +19,7 @@ has_attached_file :avatar, styles: { large: "500x500>", medium: "300x300>", thum
 
     has_many :receivers, through: :active_matches
     has_many :givers, through: :passive_matches
+    has_many :notifications, foreign_key: :recipient_id
 
 
     def match(other_user)

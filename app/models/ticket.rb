@@ -5,4 +5,5 @@ class Ticket < ApplicationRecord
   validates :message, presence: true
   
   has_many :comments, as: :commentable
+  has_many :users, through: :comments
 end
