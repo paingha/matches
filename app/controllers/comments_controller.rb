@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @comment.save
     (@ticket.users.uniq - [current_user]).each do |user|
       Notification.create(recipient: user, actor: current_user, action: "commented", notifiable: @comment)
+    end
     redirect_to @commentable, notice: "your comment was successful posted"
     
   end
