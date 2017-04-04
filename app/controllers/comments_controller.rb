@@ -5,9 +5,8 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user.first_name + " " + current_user.last_name
     @comment.save
-    (@comment.user.uniq - [current_user]).each do |user|
       Notification.create(recipient: user, actor: current_user, action: "commented", notifiable: @comment)
-    end
+   
     redirect_to @commentable, notice: "your comment was successful posted"
     
   end
