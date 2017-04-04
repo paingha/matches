@@ -1,28 +1,6 @@
 Rails.application.routes.draw do
   
 
- 
-
-  get 'blog/index'
-
-  get 'blog/new'
-
-  get 'blog/show'
-
-  get 'blog/edit'
-
-  get 'testimonies/index'
-
-  get 'testimonies/show'
-
-  get 'testimonies/new'
-
-  get 'testimonies/edit'
-
-  get 'packages/index'
-
-
-  get 'blogs/index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
  
@@ -31,6 +9,8 @@ Rails.application.routes.draw do
   resources :tickets do
     resources :comments, module: :tickets
   end
+  resources :blog
+  resources :testimonies
   resources :announcements
   resources :matches
   resource :verification, only: [:new, :create]
