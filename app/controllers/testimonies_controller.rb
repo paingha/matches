@@ -40,7 +40,7 @@ class TestimoniesController < ApplicationController
   end
   
   def testimonies_params
-		params.require(:testimony).permit(:text)
+		params.require(:testimony).permit(:title, :text)
 	end
 
 	def set_admin
