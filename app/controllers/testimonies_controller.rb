@@ -7,17 +7,13 @@ class TestimoniesController < ApplicationController
   end
 
   def create
-    @testimony = Testimony.new(testimonies_params)
-
-		if @testimony.save
-			redirect_to @testimony, notice: 'Testimony created'
-		else
-			render "New"
-		end
+   @testimony = Testimony.new(params.require(:testimony).permit(:title, :text))
+    @testimony.save
+    redirect_to @testimony
   end
   
   def new
-    @testimony = Testimony.new
+    
   end
   
   def update
