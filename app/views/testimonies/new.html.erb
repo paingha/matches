@@ -220,8 +220,8 @@
 <div class="row">
 <div class="col-sm-12">
 <div class="card card-block bg-white">
-<h4 class="card-title text-center">CREATE A TICKET<div class="pull-right">
-<a href="/tickets" class="btn btn-primary">My Tickets</a>
+<h4 class="card-title text-center">CREATE A TESTIMONY<div class="pull-right">
+<a href="/tickets" class="btn btn-primary">VIEW TESTIMONIES</a>
 </div></h4>
 
 </div>
@@ -240,7 +240,7 @@
 <div class="card-block row-equal align-middle">
 <div class="column p-r">
 <div class="h6 text-uppercase">Create New Testimony</div>
-<%= form_for :testimony, url: testimonies_path, html: { multipart: true } do |f| %>
+<%= form_for :testimony, url: new_testimony_path, html: { multipart: true } do |f| %>
   
   
   <div class="form-group">
