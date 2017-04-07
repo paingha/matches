@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
   end
   
   def create
+    binding.pry
     @ticket = Ticket.new(tickets_params)
     
     

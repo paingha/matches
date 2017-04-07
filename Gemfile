@@ -24,6 +24,7 @@ gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'nexmo'
+gem 'pry'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'bootstrap-sass'
