@@ -8,16 +8,18 @@ class BlogController < ApplicationController
     def show
     @blog = Blog.find(params[:id])
     end
+  
     def new
     end
+  
     def create
      
     @blog = Blog.new(params.require(:blog).permit(:title, :body))
     @blog.save
     redirect_to @blog
     
-  
     end
+  
     def edit
      @blog = Blog.find(params[:id])
     end
