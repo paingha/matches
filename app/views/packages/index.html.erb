@@ -1,140 +1,341 @@
-<div class="pricing-plans">
-					 <div class="wrap">
-					 	<div class="price-head">
-					 		<h1>Flat Pricing Tables Design</h1>
-					 	</div>
-					 	 
 
-						<div class="pricing-grids">
-						<div class="pricing-grid1">
-							<div class="price-value">
-									<h2><a href="#"> BASIC</a></h2>
-									<h5><span>$ 19.99</span><lable> / month</lable></h5>
-									<div class="sale-box">
-							<span class="on_sale title_shop">NEW</span>
-							</div>
+<div>
+<div class="pageload-inner">
+<div class="sk-rotating-plane"></div>
+</div>
+</div>
+ 
+<div class="app layout-fixed-header">
+<%= render 'sidebar' =%>
+ 
+ 
+<div class="main-panel">
+ 
+<div class="header navbar">
+<div class="brand visible-xs">
+ 
+<div class="toggle-offscreen">
+<a href="javascript:;" class="hamburger-icon visible-xs" data-toggle="offscreen" data-move="ltr">
+<span></span>
+<span></span>
+<span></span>
+</a>
+</div>
+ 
+ 
+<a class="brand-logo">
+<span>PayBox</span>
+</a>
+ 
+</div>
+<ul class="nav navbar-nav hidden-xs">
+<li>
+<a href="javascript:;" class="small-sidebar-toggle ripple" data-toggle="layout-small-menu">
+<i class="icon-toggle-sidebar"></i>
+</a>
+</li>
+<li class="searchbox">
+<a href="javascript:;" data-toggle="search">
+<i class="search-close-icon icon-close hide"></i>
+<i class="search-open-icon icon-magnifier"></i>
+</a>
+</li>
+<li class="navbar-form search-form hide">
+<input type="search" class="form-control search-input" placeholder="Start typing...">
+<div class="search-predict hide">
+<a href="#">Searching for 'purple rain'</a>
+<div class="heading">
+<span class="title">People</span>
+</div>
+<ul class="predictive-list">
+<li>
+<a class="avatar" href="#">
+<img src="images/face1.jpg" class="img-circle" alt="">
+<span>Tammy Carpenter</span>
+</a>
+</li>
+<li>
+<a class="avatar" href="#">
+<img src="images/face2.jpg" class="img-circle" alt="">
+<span>Catherine Moreno</span>
+</a>
+</li>
+<li>
+<a class="avatar" href="#">
+<img src="images/face3.jpg" class="img-circle" alt="">
+<span>Diana Robertson</span>
+</a>
+</li>
+<li>
+<a class="avatar" href="#">
+<img src="images/face4.jpg" class="img-circle" alt="">
+<span>Emma Sullivan</span>
+</a>
+</li>
+</ul>
+<div class="heading">
+<span class="title">Page posts</span>
+</div>
+<ul class="predictive-list">
+<li>
+<a class="avatar" href="#">
+<img src="images/unsplash/img2.jpg" class="img-rounded" alt="">
+<span>The latest news for cloud-based developers </span>
+</a>
+</li>
+<li>
+<a class="avatar" href="#">
+<img src="images/unsplash/img2.jpg" class="img-rounded" alt="">
+<span>Trending Goods of the Week</span>
+</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right hidden-xs">
+<li>
+<a href="javascript:;" class="ripple" data-toggle="dropdown">
+<span>EN</span>
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="javascript:;">English</a>
+</li>
+<li>
+<a href="javascript:;">Russian</a>
+</li>
+<li>
+<a href="javascript:;">French</a>
+</li>
+<li>
+<a href="javascript:;">Spanish</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:;" class="ripple" data-toggle="dropdown">
+<i class="icon-bell"></i>
+</a>
+<ul class="dropdown-menu notifications">
+<li class="notifications-header">
+<p class="text-muted small">You have 3 new messages</p>
+</li>
+<li>
+<ul class="notifications-list">
+<li>
+<a href="javascript:;">
+<div class="notification-icon">
+<div class="circle-icon bg-success text-white">
+<i class="icon-bulb"></i>
+</div>
+</div>
+<span class="notification-message"><b>Sean</b> launched a new application</span>
+<span class="time">2s</span>
+</a>
+</li>
+<li>
+<a href="javascript:;">
+<div class="notification-icon">
+<div class="circle-icon bg-danger text-white">
+<i class="icon-cursor"></i>
+</div>
+</div>
+<span class="notification-message"><b>Removed calendar</b> from app list</span>
+<span class="time">4h</span>
+</a>
+</li>
+<li>
+<a href="javascript:;">
+<div class="notification-icon">
+<div class="circle-icon bg-primary text-white">
+<i class="icon-basket"></i>
+</div>
+</div>
+<span class="notification-message"><b>Denise</b> bought <b>Urban Admin Kit</b></span>
+<span class="time">2d</span>
+</a>
+</li>
+<li>
+<a href="javascript:;">
+<div class="notification-icon">
+<div class="circle-icon bg-info text-white">
+<i class="icon-bubble"></i>
+</div>
+</div>
+<span class="notification-message"><b>Vincent commented</b> on an item</span>
+<span class="time">2s</span>
+</a>
+</li>
+<li>
+<a href="javascript:;">
+<span class="notification-icon">
+<img src="images/face3.jpg" class="avatar img-circle" alt="">
+</span>
+<span class="notification-message"><b>Jack Hunt</b> has <b>joined</b> mailing list</span>
+<span class="time">9d</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="javascript:;" class="ripple" data-toggle="dropdown">
+<%= image_tag(current_user.avatar.url(:medium), :class => "header-avatar img-circle") %>
+<span><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></span>
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="/users/edit">Settings</a>
+</li>
+<li>
+<a href="javascript:;">Upgrade</a>
+</li>
+<li>
+<a href="javascript:;">
+<span class="label bg-danger pull-right">34</span>
+<span>Notifications</span>
+</a>
+</li>
+<li role="separator" class="divider"></li>
+<li>
+<a href="javascript:;">Help</a>
+</li>
+<li>
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
+</li>
+</ul>
+</li>
 
-							</div>
-							<div class="price-bg">
-							<ul>
-								<li class="whyt"><a href="#">5GB Disk Space </a></li>
-								<li><a href="#">10 Domain Names</a></li>
-								<li class="whyt"><a href="#">5 E-Mail Address </a></li>
-								<li><a href="#">50GB Monthly Bandwidth </a></li>
-								<li class="whyt"><a href="#">Fully Support</a></li>
-							</ul>
-							<div class="cart1">
-								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
-							</div>
-							</div>
-						</div>
-						<div class="pricing-grid2">
-							<div class="price-value two">
-								<h3><a href="#">STANDARD</a></h3>
-								<h5><span>$ 29.99</span><lable> / month</lable></h5>
-								<div class="sale-box two">
-							<span class="on_sale title_shop">NEW</span>
-							</div>
+</ul>
+</div>
+ 
+ 
+<div class="main-content">
+<div class="m-x-n-g m-t-n-g overflow-hidden">
+<div class="row">
+<div class="col-sm-12">
+<div class="card card-block bg-white">
+<h4 class="card-title text-center">Packages</h4>
 
-							</div>
-							<div class="price-bg">
-							<ul>
-								<li class="whyt"><a href="#">10GB Disk Space </a></li>
-								<li><a href="#">20 Domain Names</a></li>
-								<li class="whyt"><a href="#">10 E-Mail Address </a></li>
-								<li><a href="#">100GB Monthly Bandwidth </a></li>
-								<li class="whyt"><a href="#">Fully Support</a></li>
-							</ul>
-							<div class="cart2">
-								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
-							</div>
-							</div>
-						</div>
-						<div class="pricing-grid3">
-							<div class="price-value three">
-								<h4><a href="#">PREMIUM</a></h4>
-								<h5><span>$ 49.99</span><lable> / month</lable></h5>
-								<div class="sale-box three">
-							<span class="on_sale title_shop">NEW</span>
-							</div>
+</div>
+</div>
+</div>
 
-							</div>
-							<div class="price-bg">
-							<ul>
-								<li class="whyt"><a href="#">50GB Disk Space </a></li>
-								<li><a href="#">50 Domain Names</a></li>
-								<li class="whyt"><a href="#">20 E-Mail Address </a></li>
-								<li><a href="#">300GB Monthly Bandwidth </a></li>
-								<li class="whyt"><a href="#">Fully Support</a></li>
-							</ul>
-							<div class="cart3">
-								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
-							</div>
-							</div>
-						</div>
-							<div class="clear"> </div>
-							<!--pop-up-grid-->
-								 <div id="small-dialog" class="mfp-hide">
-									<div class="pop_up">
-									 	<div class="payment-online-form-left">
-											<form>
-												<h4><span class="shipping"> </span>Shipping</h4>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
-													<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
-													<li><input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
-													<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
-													<div class="clear"> </div>
-												</ul>
-												<div class="clear"> </div>
-											<ul class="payment-type">
-												<h4><span class="payment"> </span> Payments</h4>
-												<li><span class="col_checkbox">
-													<input id="3" class="css-checkbox1" type="checkbox">
-													<label for="3" name="demo_lbl_1" class="css-label1"> </label>
-													<a class="visa" href="#"> </a>
-													</span>
-													
-												</li>
-												<li>
-													<span class="col_checkbox">
-														<input id="4" class="css-checkbox2" type="checkbox">
-														<label for="4" name="demo_lbl_2" class="css-label2"> </label>
-														<a class="paypal" href="#"> </a>
-													</span>
-												</li>
-												<div class="clear"> </div>
-											</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
-													<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
-													<div class="clear"> </div>
-												</ul>
-												<ul>
-													<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
-													<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
-													<div class="clear"> </div>
-												</ul>
-												<ul class="payment-sendbtns">
-													<li><input type="reset" value="Cancel"></li>
-													<li><input type="submit" value="Process order"></li>
-												</ul>
-												<div class="clear"> </div>
-											</form>
-										</div>
-						  			</div>
-								</div>
-								<!--pop-up-grid-->
-							</div>
-						<div class="clear"> </div>
 
-					</div>
-				
-				</div>
-	
+  </div>
+<div class="row same-height-cards">
+
+<div class="col-md-4">
+<div class="card no-border bg-white">
+<div class="card-block">
+<div class="p-a">
+<p>package 1</p>
+</div>
+<div class="">
+
+<i class="icon-trash"></i>
+<span>Delete</span>
+&nbsp;
+
+
+<i class="icon-pencil"></i>
+<span>Edit</span>
+
+
+<a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong></strong></a>
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card no-border bg-white">
+<div class="card-block">
+<div class="p-a">
+<p>package 2</p>
+</div>
+<div class="">
+
+<i class="icon-trash"></i>
+<span>Delete</span>
+&nbsp;
+
+
+<i class="icon-pencil"></i>
+<span>Edit</span>
+
+
+<a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong></strong></a>
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card no-border bg-white">
+<div class="card-block">
+<div class="p-a">
+<p>package 3</p>
+</div>
+<div class="">
+
+<i class="icon-trash"></i>
+<span>Delete</span>
+&nbsp;
+
+
+<i class="icon-pencil"></i>
+<span>Edit</span>
+
+
+<a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong></strong></a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+</div>
+ 
+ 
+<footer class="content-footer">
+<nav class="footer-right">
+<ul class="nav">
+<li>
+<a href="javascript:;">Feedback</a>
+</li>
+<li>
+<a href="javascript:;" class="scroll-up">
+<i class="fa fa-angle-up"></i>
+</a>
+</li>
+</ul>
+</nav>
+<nav class="footer-left hidden-xs">
+<ul class="nav">
+<li>
+<a href="javascript:;"><span>About</span> PayBox</a>
+</li>
+<li>
+<a href="javascript:;">Privacy</a>
+</li>
+<li>
+<a href="javascript:;">Terms</a>
+</li>
+<li>
+<a href="javascript:;">Help</a>
+</li>
+</ul>
+</nav>
+</footer>
+ 
+
+ 
+</div>
+
