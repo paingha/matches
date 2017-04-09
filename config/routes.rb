@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root to: "pages#index"
   resources :pages
   resources :packages
+  post 'packages/bronze'
   resources :tickets do
     resources :comments, module: :tickets
   end
