@@ -3,9 +3,7 @@ class PackagesController < ApplicationController
   end
   
   def bronze
-    u = current_user
-    u.package = bronze
-    u.save!
+    current_user.package = bronze
     redirect_to packages_path
   end
 end
