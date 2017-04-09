@@ -25,6 +25,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'nexmo'
 gem 'pry'
+gem "ckeditor"
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'bootstrap-sass'
