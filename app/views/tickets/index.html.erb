@@ -166,7 +166,7 @@
 <li>
 <a href="javascript:;">
 <span class="notification-icon">
-<%= image_tag(current_user.avatar.url(:medium), :class => "header-avatar img-circle") %>
+<img src="#" class="avatar img-circle" alt="">
 </span>
 <span class="notification-message"><b>Jack Hunt</b> has <b>joined</b> mailing list</span>
 <span class="time">9d</span>
@@ -178,7 +178,7 @@
 </li>
 <li>
 <a href="javascript:;" class="ripple" data-toggle="dropdown">
-<img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
+<%= image_tag(current_user.avatar.url(:medium), :class => "header-avatar img-circle") %>
 <span><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></span>
 <span class="caret"></span>
 </a>
