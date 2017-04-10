@@ -166,7 +166,7 @@
 <li>
 <a href="javascript:;">
 <span class="notification-icon">
-<img src="#" class="avatar img-circle" alt="">
+<%= image_tag(current_user.avatar.url(:medium), :class => "header-avatar img-circle") %>
 </span>
 <span class="notification-message"><b>Jack Hunt</b> has <b>joined</b> mailing list</span>
 <span class="time">9d</span>
