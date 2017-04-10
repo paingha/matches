@@ -1,6 +1,7 @@
 class TestimoniesController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_verified
+  before_action :find_testimonies, only: [:show, :edit, :update, :destroy]
   
   def index
     @testimony = Testimony.all.order('created_at DESC')
@@ -41,15 +42,6 @@ class TestimoniesController < ApplicationController
   
   def testimonies_params
 		params.require(:testimony).permit(:title, :text)
-	end
-
-	def set_admin
-		if current_user.admin == true
-
-		else
-			
-			redirect_to root_path
-		end
 	end
 
 	
