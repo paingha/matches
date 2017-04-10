@@ -1,0 +1,5 @@
+class AddUserIdTestimonies < ActiveRecord::Migration[5.0]
+  def change
+    add_column :testimonies, :user_id, :integer
+  end
+end
