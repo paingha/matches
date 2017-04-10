@@ -23,6 +23,11 @@ class TicketsController < ApplicationController
   end
   
   def show
+    if current_user.id == @ticket.user_id || current_user.admin == true
+
+		else
+			redirect_to root_path, notice: "Ticket not found."
+		end
   end
   
   def edit
