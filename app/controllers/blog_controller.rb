@@ -1,5 +1,5 @@
 class BlogController < ApplicationController
-  before_action :set_admin, only: [:new, :create, :edit, :update, :destroy]
+  
     
     def index
     @blog = Blog.all.order('created_at DESC')
