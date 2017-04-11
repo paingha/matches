@@ -229,7 +229,7 @@
 <div class="card no-border bg-white">
 <div class="card-block">
 <div class="p-a">
-<h3><%= blog.title %></h3>
+<h3><%= link_to blog.title, blog_path(blog) %></h3>
 <p><%= sanitize(blog.body.truncate(400, separator: '</p>')) %></p>
 </div>
 <div class="">
