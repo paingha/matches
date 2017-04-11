@@ -114,10 +114,11 @@ T
 </a>
 </li>
  <li>
-<a href="#" target="_blank">
+ <%= link_to destroy_user_session_path, :method => :delete do %>
+
 <i class="icon-lock"></i>
 <span>Log Out</span>
-</a>
+<% end %>
 </li>
  
 
