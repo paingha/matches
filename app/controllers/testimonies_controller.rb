@@ -11,7 +11,7 @@ class TestimoniesController < ApplicationController
     @testimony = Testimony.new(testimonies_params)
 
 		if @testimony.save
-			redirect_to @testimony, notice: 'Testimony created'
+			redirect_to @testimony
 		else
 			render "New"
 		end
