@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :tickets do
     resources :comments, module: :tickets
   end
+  resources :blog do
+    resources :comments, module: :blog
+  end
   resources :blog
   resources :testimonies
   resources :announcements
