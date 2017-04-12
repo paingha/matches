@@ -232,6 +232,7 @@
 <h3><%= testimony.title %></h3>
 <p><%= sanitize(testimony.text.truncate(400, separator: '</p>')) %></p>
 </div>
+<% if current_user.admin == true %>
 <div class="">
 <%= link_to  testimony_path(testimony), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm btn-icon pull-left card-link" do %>
 
@@ -247,6 +248,8 @@
 <a href="#" class="card-link pull-right"><i class="icon-clock"></i>&nbsp;<strong><%= time_ago_in_words(testimony.created_at) %>&nbsp;ago</strong></a>
 
 </div>
+<% else %>
+<% end %>
 </div>
 </div>
 </div>
