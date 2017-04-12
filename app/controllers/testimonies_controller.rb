@@ -2,7 +2,6 @@ class TestimoniesController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_verified
   before_action :find_testimony, only: [:show, :edit, :update, :destroy]
-  before_action :verify_admin, only [:edit, :update, :destroy]
   
   def index
     @testimony = Testimony.all.order('created_at DESC')
@@ -51,12 +50,6 @@ class TestimoniesController < ApplicationController
 		@testimony = Testimony.find(params[:id])
 	end
   
-  def verify_admin
-    if current_user.admin == true
-      
-    else
-      redirect_to root_path
-    end
-  end
+  
 
 end
