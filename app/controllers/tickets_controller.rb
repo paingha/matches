@@ -5,9 +5,9 @@ class TicketsController < ApplicationController
   
   def index
     if current_user.admin ==true
-      @tickets = ticket.all.order('created_at DESC')
+      @tickets = tickets.all.order('created_at DESC')
     else
-    @tickets = current_user.ticket.all.order('created_at DESC')
+    @tickets = current_user.tickets.all.order('created_at DESC')
     end
   end
   
