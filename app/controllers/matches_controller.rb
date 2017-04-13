@@ -41,7 +41,7 @@ class MatchesController < ApplicationController
 	private
 
 	def matches_params
-		params.require(:match).permit(:receiver_id, :giver_id, :user_id)
+		params.require(:match).permit(:receiver_id, :giver_id)
 	end
 
 	
