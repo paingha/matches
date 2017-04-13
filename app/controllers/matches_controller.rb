@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
 	before_action :find_matches, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@matches = current_user.matches.all.order('created_at DESC')
+		@match = current_user.matches.all.order('created_at DESC')
 	end
 
 	
