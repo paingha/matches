@@ -50,4 +50,8 @@ class MatchesController < ApplicationController
 	def find_matches
 		@match = Match.find(params[:id])
 	end
+  
+  def name
+    current_user.first_name + " " + current_user.last_name
+  end
 end
