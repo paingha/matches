@@ -2,11 +2,11 @@
   
   <p>
     <%= f.label :receiver_id %><br>
-  <%= f.collection_select :receiver_id, User.all, :id, :last_name, { prompt: "Choose a Receiver" }, input_html: { class: "dropdown-toggle" } %>
+  <%= f.collection_select :receiver_id, User.all, :id, :email, { prompt: "Choose a Receiver" }, input_html: { class: "dropdown-toggle" } %>
   </p>
   <p>
     <%= f.label :giver_id %><br>
-  <%= f.collection_select :giver_id, User.all, :id, :last_name, { prompt: "Choose a Giver" }, input_html: { class: "dropdown-toggle" } %>
+  <%= f.collection_select :giver_id, User.all, :id, :email, { prompt: "Choose a Giver" }, input_html: { class: "dropdown-toggle" } %>
   </p>
   <br>
 <%= f.hidden_field :user_id, value: current_user.id, autofocus: true %>
