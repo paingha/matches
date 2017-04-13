@@ -4,8 +4,8 @@ class TicketsController < ApplicationController
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
   
   def index
-    if current_user.admin ==true
-      @tickets = tickets.all.order('created_at DESC')
+    if current_user.admin == true
+      @tickets = Tickets.all.order('created_at DESC')
     else
     @tickets = current_user.tickets.all.order('created_at DESC')
     end
