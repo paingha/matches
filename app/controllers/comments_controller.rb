@@ -53,8 +53,7 @@
           <div class="col-md-12 dashboard-form">
             <div class="bg-white pinside40 mb30">
 		
-		<%= render 'form', category: @category, url: categories_path, method: 'post', btn_title: 'Create' %>
-              
+		          
             </div>
           </div>
         </div>
