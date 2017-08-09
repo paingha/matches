@@ -5,6 +5,8 @@ class AnnouncementsController < ApplicationController
   
   def index
     @announcement = Announcement.all.order('created_at DESC')
+    @meta_title = meta_title 'Announcements'
+    @meta_description = 'Announcements and news about new Paybox policies and features'
   end
   
   def create

@@ -1,5 +1,7 @@
 class PackagesController < ApplicationController
   def index
+  	@meta_title = meta_title 'Packages'
+    @meta_description = 'Membership contribution packages'
   end
   
   def bronze

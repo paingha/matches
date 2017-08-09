@@ -22,6 +22,32 @@
 </div>
 <% end %>
 </div>
+
+
+<div class="row">
+<% @receiver.each do |receiver| %>
+<div class="col-sm-12">
+<div class="card card-block bg-white">
+<h4 class="card-title">Announcement</h4>
+<p class="card-text"><%= receiver.receiver_id %></p>
+<p class="card-text"><%= receiver.giver_id %></p>
+</div>
+</div>
+<% end %>
+</div>
+
+<div class="row">
+<% @giver.each do |giver| %>
+<div class="col-sm-12">
+<div class="card card-block bg-white">
+<h4 class="card-title">Announcement</h4>
+<p class="card-text"><%= giver.receiver_id %></p>
+<p class="card-text"><%= giver.giver_id %></p>
+</div>
+</div>
+<% end %>
+</div>
+
   </div>
 <div class="row same-height-cards">
 <div class="col-md-6">

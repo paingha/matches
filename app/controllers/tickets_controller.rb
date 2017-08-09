@@ -4,6 +4,8 @@ class TicketsController < ApplicationController
   before_action :find_ticket, only: [:show, :edit, :update, :destroy]
   
   def index
+  	@meta_title = meta_title 'Paybox Tickets'
+    @meta_description = 'Submit your support tickets for a Paybox official to help with any issue'
     if current_user.admin == true
       @tickets = Ticket.all.order('created_at DESC')
     else
@@ -27,6 +29,8 @@ class TicketsController < ApplicationController
   end
   
   def show
+  	@meta_title = meta_title @ticket.title + " " + "Ticket"
+    @meta_description = 'Member Ticket...'
     if current_user.id == @ticket.user_id || current_user.admin == true
 
 		else

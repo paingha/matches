@@ -1,7 +1,11 @@
 
 <html>
   <head>
-    <title>Paybox</title>
+    <title><%= @meta_title ? @meta_title : ApplicationController::BRAND_NAME %></title>
+    <% if @meta_description.present? %>
+    <meta name="description" content="<%= @meta_description %>">
+    <% end %>
+
     <%= csrf_meta_tags %>
 
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +14,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-<meta property="og:url"           content="http://www.paybox.herokuapp.com" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="PayBox" />
-  <meta property="og:description"   content="Your description" />
-  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+<meta property="og:url" content="http://www.paybox.herokuapp.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PayBox" />
+  <meta property="og:description" content="Your description" />
+  <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
 
 
   </head>

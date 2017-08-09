@@ -5,6 +5,7 @@ class MatchesController < ApplicationController
 
 	def index
 		@match = Match.all.order('created_at DESC')
+
 	end
 
 	
@@ -36,6 +37,9 @@ class MatchesController < ApplicationController
 	def destroy
 		@match.destroy
 		redirect_to root_path
+	end
+
+	def show
 	end
 
 	private

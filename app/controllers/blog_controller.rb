@@ -3,10 +3,14 @@ class BlogController < ApplicationController
     
     def index
     @blog = Blog.all.order('created_at DESC')
+    @meta_title = meta_title 'Paybox Blog'
+    @meta_description = 'Comprehensive tutorials and hacks on how to use Paybox effectively'
     end
     
     def show
     @blog = Blog.find(params[:id])
+    @meta_title = meta_title @blog.title
+    @meta_description = @blog.meta_description
     end
   
     def new
@@ -14,7 +18,7 @@ class BlogController < ApplicationController
   
     def create
      
-    @blog = Blog.new(params.require(:blog).permit(:title, :body))
+    @blog = Blog.new(params.require(:blog).permit(:title, :body, :meta_description))
     @blog.save
     redirect_to @blog
     

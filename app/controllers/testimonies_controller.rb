@@ -5,6 +5,8 @@ class TestimoniesController < ApplicationController
   
   def index
     @testimony = Testimony.all.order('created_at DESC')
+    @meta_title = meta_title 'Testimonies'
+    @meta_description = 'Testimonies of members who have achieved a lot with the help of Paybox'
   end
 
   def create
