@@ -29,10 +29,6 @@ has_attached_file :avatar, styles: { large: "500x500>", medium: "300x300>", thum
     #active_matches.create(giver_id: other_user.id)
   end
 
-  def givers_match(user)
-    matches.create(giver: self, receiver: user)
-  end
-
   # Unfollows a user.
   def unmatch(other_user)
     #active_matches.find_by(giver_id: other_user.id).destroy

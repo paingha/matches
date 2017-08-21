@@ -23,6 +23,8 @@ module MatchesHelper
     end
   end
 
+  private
+
   def eligible(not_eligible, match_type)
     # Now we need to get a list of users that are eligible
     # to be matched
