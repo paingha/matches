@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726210530) do
+ActiveRecord::Schema.define(version: 20170819141150) do
 
   create_table "announcements", force: :cascade do |t|
     t.text     "text"
@@ -53,9 +53,10 @@ ActiveRecord::Schema.define(version: 20170726210530) do
   create_table "matches", force: :cascade do |t|
     t.integer  "receiver_id"
     t.integer  "giver_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "user_id"
+    t.boolean  "finished",    default: false
     t.index ["giver_id"], name: "index_matches_on_giver_id"
     t.index ["receiver_id", "giver_id"], name: "index_matches_on_receiver_id_and_giver_id", unique: true
     t.index ["receiver_id"], name: "index_matches_on_receiver_id"
