@@ -40,6 +40,8 @@ class MatchesController < ApplicationController
 		@match.finished = true
 		if matches?(current_user)
 			find_new_match(current_user, @match)
+		else
+			# Insert refer a friend redirect_to here
 		end
 		redirect_to root_path
 	end

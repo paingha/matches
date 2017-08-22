@@ -17,12 +17,7 @@
       u = current_user
       u.verified = true
       u.save!
-      # Matching the new user....
-      if matches?(u)
-        find_new_match(u, nil)
-      else
-        # Insert refer a friend redirect_to here
-      end
+
       redirect_to :root
     else
       flash[:alert] = 'Code invalid'
