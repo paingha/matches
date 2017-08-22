@@ -3,6 +3,8 @@ class MatchesController < ApplicationController
 	
 	before_action :find_matches, only: [:show, :edit, :update, :destroy]
 
+	include MatchesHelper
+
 	def index
 		@match = Match.all.order('created_at DESC')
 
@@ -35,7 +37,10 @@ class MatchesController < ApplicationController
 	end
 
 	def destroy
-		@match.destroy
+		@match.finished = true
+		if matches?(current_user)
+			find_new_match(current_user, @match)
+		end
 		redirect_to root_path
 	end
 

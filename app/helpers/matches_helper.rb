@@ -2,17 +2,8 @@ module MatchesHelper
   def find_new_match(current_user, last_match)
     user = User.find(current_user.id)
 
-    match_type = :receiver
-
-    if last_match
-      match_type = :giver unless last_match.receiver == user
-    end
-
-    not_eligible = not_eligible(user)
-
-    eligible = eligible(not_eligible, match_type)
-
-    return false unless eligible.length
+    match_type = last_match_type(last_match, user)
+    eligible = preliminary_match(user, last_match)
 
     match = eligible.sample
 
@@ -23,7 +14,51 @@ module MatchesHelper
     end
   end
 
+  def matched?(user)
+    matched = user.matches.where(finished: false)
+
+    return false unless matched.length
+
+    true
+  end
+
+  def matches?(user)
+    matches = preliminary_match(user, nil)
+    return true unless matches.length.zero?
+
+    false
+  end
+
+  def unmatched_users(user)
+    preliminary_match(user, nil)
+  end
+
   private
+
+  def last_match_type(last_match, user)
+    match_type = :receiver
+
+    if last_match
+      match_type = :giver unless last_match.receiver == user
+    end
+
+    match_type
+  end
+
+  def preliminary_match(current_user, last_match)
+    user = User.find(current_user.id)
+
+    match_type = last_match_type(last_match, user)
+
+    not_eligible = not_eligible(user)
+
+    eligible = eligible(not_eligible, match_type)
+
+    return false unless eligible.length
+
+    eligible
+  end
+
 
   def eligible(not_eligible, match_type)
     # Now we need to get a list of users that are eligible
