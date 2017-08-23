@@ -2,6 +2,8 @@
   class VerificationsController < ApplicationController
  before_action :send_verification_request
 
+  include MatchesHelper
+
   def new
   end
 
@@ -15,6 +17,7 @@
       u = current_user
       u.verified = true
       u.save!
+
       redirect_to :root
     else
       flash[:alert] = 'Code invalid'
